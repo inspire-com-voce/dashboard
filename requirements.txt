@@ -19,7 +19,6 @@ charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.4
 comm==0.2.1
-command-not-found==0.3
 commonmark==0.9.1
 contourpy==1.2.0
 cryptography==3.4.8
