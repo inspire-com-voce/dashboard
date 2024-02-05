@@ -479,7 +479,7 @@ def descritiva_page():
             avg_ansiedade = df['Ansiedade'].mean()
 
             # Streamlit App
-            st.header("Métricas globais da equipe: ")
+            st.header("Métricas globais: ")
             # índices
             cola, colb, colc, cold = st.columns(4)
 
