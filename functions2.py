@@ -29,7 +29,7 @@ def login_page():
 
 def main():
     st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
-    st.sidebar.image('/home/henrique/Desktop/Gaia/Dash-Mel/Prancheta 1inspire.png', width = 250)
+    st.sidebar.image('https://inspireagora.com.br/wp-content/uploads/2023/12/inspire-logo.png', width = 250)
     st.sidebar.title("Navegação")
 
     # Add options in the sidebar for navigation
