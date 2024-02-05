@@ -3,7 +3,6 @@ accelerate==0.26.1
 altair==5.2.0
 annotated-types==0.6.0
 anyio==4.2.0
-apturl==0.5.2
 asttokens==2.4.1
 attrs==23.2.0
 bcrypt==3.2.0
