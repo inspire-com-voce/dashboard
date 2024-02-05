@@ -1,9 +1,6 @@
 import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from streamlit_gsheets import GSheetsConnection
-import gspread
-from google.oauth2.service_account import Credentials
 import pandas as pd
 import altair as alt
 import pandas as pd
