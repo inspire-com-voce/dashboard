@@ -116,9 +116,7 @@ def validate_user(email, password):
             rows_data.append(row_data)
 
     users_df = pd.DataFrame(rows_data)
-    users_df2 = pd.read_csv('users.csv')
 
-    users_df.append(users_df2)
 
 
 
