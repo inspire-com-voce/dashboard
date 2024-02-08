@@ -434,6 +434,8 @@ def descritiva_page():
             'Name': page['properties']['Name']['title'][0]['plain_text'] if 'Name' in page['properties'] and 'title' in page['properties']['Name'] and page['properties']['Name']['title'] else None,
             'Email': page['properties']['Email']['email'] if 'Email' in page['properties'] and 'email' in page['properties']['Email'] else None,
             'Gênero': page['properties']['Gênero']['rich_text'][0]['plain_text'] if 'Gênero' in page['properties'] and 'rich_text' in page['properties']['Gênero'] and page['properties']['Gênero']['rich_text'] else None,
+            'Setor': page['properties']['Setor']['rich_text'][0]['plain_text'] if 'Setor' in page['properties'] and 'rich_text' in page['properties']['Setor'] and page['properties']['Setor']['rich_text'] else None,
+            'Cargo': page['properties']['Cargo']['rich_text'][0]['plain_text'] if 'Cargo' in page['properties'] and 'rich_text' in page['properties']['Cargo'] and page['properties']['Cargo']['rich_text'] else None,
             'Idade': page['properties']['Idade']['number'] if 'Idade' in page['properties'] and 'number' in page['properties']['Idade'] else None,
             'Burnout': page['properties']['Burnout']['rich_text'][0]['plain_text'] if 'Burnout' in page['properties'] and 'rich_text' in page['properties']['Burnout'] and page['properties']['Burnout']['rich_text'] else None,
             'Medicamento': page['properties']['Medicamento']['rich_text'][0]['plain_text'] if 'Medicamento' in page['properties'] and 'rich_text' in page['properties']['Medicamento'] and page['properties']['Medicamento']['rich_text'] else None,
@@ -501,7 +503,7 @@ def descritiva_page():
         
             
             # Opção para escolher a métrica para o gráfico de pizza
-            selected_metric = st.selectbox("Selecione o filtro de análise:", ["Medicamento", "Gênero", "Burnout"])
+            selected_metric = st.selectbox("Selecione o filtro de análise:", ["Medicamento", "Gênero", "Burnout","Cargo","Setor"])
             
             
 
@@ -518,6 +520,11 @@ def descritiva_page():
                 fig_pie = px.pie(df_processed, names='Gênero', title='Distribuição de membros por Gênero', hole=0.5)
             elif selected_metric == "Burnout":
                 fig_pie = px.pie(df_processed, names='Burnout', title='Distribuição de membros por Burnout', hole=0.5)
+                
+            elif selected_metric == "Cargo":
+                fig_pie = px.pie(df_processed, names='Cargo', title='Distribuição de membros por Cargo', hole=0.5)
+            elif selected_metric == "Setor":
+                fig_pie = px.pie(df_processed, names='Setor', title='Distribuição de membros por Setor', hole=0.5)
 
             # Exibir o gráfico de pizza
             st.plotly_chart(fig_pie)
@@ -532,6 +539,14 @@ def descritiva_page():
             elif selected_metric == "Burnout":
                 filter_values = df_processed['Burnout'].unique()
                 filter_column = 'Burnout'
+
+            elif selected_metric == "Cargo":
+                filter_values = df_processed['Cargo'].unique()
+                filter_column = 'Cargo'
+
+            elif selected_metric == "Setor":
+                filter_values = df_processed['Setor'].unique()
+                filter_column = 'Setor'
 
             # Exibir métricas específicas em colunas
             metrics_column = st.columns(len(filter_values))
