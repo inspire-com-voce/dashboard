@@ -644,18 +644,23 @@ def clima_org():
                 
             }
             rows_data.append(row_data)
-
+        
         df = pd.DataFrame(rows_data)
         df.dropna(inplace=True)
         resultado_df = pd.DataFrame(columns=['elemento', 'tranquilidade', 'alegria'])
-
-        # Adicionar linhas ao DataFrame resultante com os dados organizados
-        resultado_df = resultado_df.append({'elemento': 'Missão', 'tranquilidade': df['missaoTranquilidade'].mean()-5, 'alegria': df['missaoAlegria'].mean()-5}, ignore_index=True)
-        resultado_df = resultado_df.append({'elemento': 'Valores', 'tranquilidade': df['valorTranquilidade'].mean()-5, 'alegria': df['valorAlegria'].mean()-5}, ignore_index=True)
-        resultado_df = resultado_df.append({'elemento': 'Visão', 'tranquilidade': df['crencaTranquilidade'].mean()-5, 'alegria': df['crencaAlegria'].mean()-5}, ignore_index=True)
-        resultado_df = resultado_df.append({'elemento': 'Política de qualidade', 'tranquilidade': df['compTranquilidade'].mean()-5, 'alegria': df['compAlegria'].mean()-5}, ignore_index=True)
         
-        df = resultado_df
+        # Adicionar linhas ao DataFrame resultante com os dados organizados
+        nova_linha_missao = pd.DataFrame({'elemento': ['Missão'], 'tranquilidade': [df['missaoTranquilidade'].mean()-5], 'alegria': [df['missaoAlegria'].mean()-5]})
+        resultado_df = pd.concat([resultado_df, nova_linha_missao], ignore_index=True)
+        
+        nova_linha_valores = pd.DataFrame({'elemento': ['Valores'], 'tranquilidade': [df['valorTranquilidade'].mean()-5], 'alegria': [df['valorAlegria'].mean()-5]})
+        resultado_df = pd.concat([resultado_df, nova_linha_valores], ignore_index=True)
+        
+        nova_linha_visao = pd.DataFrame({'elemento': ['Visão'], 'tranquilidade': [df['crencaTranquilidade'].mean()-5], 'alegria': [df['crencaAlegria'].mean()-5]})
+        resultado_df = pd.concat([resultado_df, nova_linha_visao], ignore_index=True)
+        
+        nova_linha_politica = pd.DataFrame({'elemento': ['Política de qualidade'], 'tranquilidade': [df['compTranquilidade'].mean()-5], 'alegria': [df['compAlegria'].mean()-5]})
+        resultado_df = pd.concat([resultado_df, nova_linha_politica], ignore_index=True)
 
             # Leitura do CSV
             # Carregar JSON
