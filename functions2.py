@@ -760,6 +760,8 @@ def clima_org():
         st.table(table_data)
 
         st.header('Alinhamento de emoções')
+        st.write('O alinhamento de emoções é um valor que ocila de 0 a 1. Com 0 representando alinhamento nulo e 1 representando alinhamento máxima.')
+
         # Função para calcular a similaridade de cosseno
         def calcular_similaridade_cosseno(vetor_referencia, vetor):
             dot_product = np.dot(vetor_referencia, vetor)
