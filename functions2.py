@@ -733,7 +733,7 @@ def clima_org():
         detalhes_elementos = []
 
         # Iterar sobre as linhas do DataFrame
-        for index, row in df.iterrows():
+        for index, row in resultado_df.iterrows():
             elemento = row['elemento']
             tranquilidade = row['tranquilidade']
             alegria = row['alegria']
