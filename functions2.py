@@ -650,10 +650,10 @@ def clima_org():
         resultado_df = pd.DataFrame(columns=['elemento', 'tranquilidade', 'alegria'])
 
         # Adicionar linhas ao DataFrame resultante com os dados organizados
-        resultado_df = resultado_df.append({'elemento': 'Missão', 'tranquilidade': df['missaoTranquilidade'].mean()-5, 'alegria': df['missaoAlegria'].mean()-5}, ignore_index=True)
-        resultado_df = resultado_df.append({'elemento': 'Valores', 'tranquilidade': df['valorTranquilidade'].mean()-5, 'alegria': df['valorAlegria'].mean()-5}, ignore_index=True)
-        resultado_df = resultado_df.append({'elemento': 'Visão', 'tranquilidade': df['crencaTranquilidade'].mean()-5, 'alegria': df['crencaAlegria'].mean()-5}, ignore_index=True)
-        resultado_df = resultado_df.append({'elemento': 'Política de qualidade', 'tranquilidade': df['compTranquilidade'].mean()-5, 'alegria': df['compAlegria'].mean()-5}, ignore_index=True)
+        resultado_df = resultado_df.concat({'elemento': 'Missão', 'tranquilidade': df['missaoTranquilidade'].mean()-5, 'alegria': df['missaoAlegria'].mean()-5}, ignore_index=True)
+        resultado_df = resultado_df.concat({'elemento': 'Valores', 'tranquilidade': df['valorTranquilidade'].mean()-5, 'alegria': df['valorAlegria'].mean()-5}, ignore_index=True)
+        resultado_df = resultado_df.concat({'elemento': 'Visão', 'tranquilidade': df['crencaTranquilidade'].mean()-5, 'alegria': df['crencaAlegria'].mean()-5}, ignore_index=True)
+        resultado_df = resultado_df.concat({'elemento': 'Política de qualidade', 'tranquilidade': df['compTranquilidade'].mean()-5, 'alegria': df['compAlegria'].mean()-5}, ignore_index=True)
         
         df = resultado_df
 
