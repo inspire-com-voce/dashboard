@@ -691,13 +691,13 @@ def clima_org():
 
             # Verificar se as colunas necessárias existem
         required_columns = ['elemento', 'tranquilidade', 'alegria']
-        if all(column in df.columns for column in required_columns):
+        if all(column in resultado_df.columns for column in required_columns):
                 # Criar um gráfico de dispersão com tamanho reduzido
                 fig, ax = plt.subplots(figsize=(3, 2))  # Ajuste o tamanho conforme necessário
                 st.title('Clima Organizacional - Tranquilidade x Alegria')
 
-                for elemento in df['elemento'].unique():
-                    subset = df[df['elemento'] == elemento]
+                for elemento in resultado_df['elemento'].unique():
+                    subset = resultado_df[resultado_df['elemento'] == elemento]
 
                     # Use seaborn para o gráfico de dispersão
                     sns.scatterplot(x='tranquilidade', y='alegria', data=subset, label=elemento, s=75)
