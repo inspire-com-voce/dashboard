@@ -763,7 +763,7 @@ def clima_org():
         table_data = []
 
         # Iterate through the DataFrame and add data to the table
-        for index, row in df.iterrows():
+        for index, row in resultado_df.iterrows():
             elemento = row['elemento']
             distancia = np.sqrt(row['tranquilidade']**2 + row['alegria']**2) / 7.0710678118654755
             table_data.append({'Elemento': f'{elemento}', 'Coeficiente de Intensidade': f'{distancia:.4f}'})
@@ -785,7 +785,7 @@ def clima_org():
         vetores = []
 
         # Ler todos os vetores e elementos do DataFrame df
-        for index, row in df.iterrows():
+        for index, row in resultado_df.iterrows():
             elemento = row['elemento']
             vetor = np.array([row['tranquilidade'], row['alegria']])
             vetores.append((elemento, vetor))
