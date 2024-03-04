@@ -9,7 +9,7 @@ import seaborn as sns
 import requests
 
 #Functions
-from functions2 import validate_user, preprocess_data_admin, preprocess_data_fin, preprocess_data_it, preprocess_data_mkt, preprocess_data_rh, preprocess_data_sales
+from functions2 import validate_user
 
 #Pages
 from functions2 import login_page, main, descritiva_page
