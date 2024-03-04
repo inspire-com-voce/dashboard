@@ -359,32 +359,26 @@ def descritiva_page():
             with cola:
                 st.write("**Bem Estar Emocional:**")
                 st.write(f"Média: **{avg_bem_estar:.2f}**")
-                st.write(f"Desvio Padrão: **{std_bem_estar:.2f}**")
 
             with colb:
                 st.write("**Engajamento:**")
                 st.write(f"Média: **{avg_engaj:.2f}**")
-                st.write(f"Desvio Padrão: **{std_engaj:.2f}**")
 
             with colc:
                 st.write("**Estresse:**")
                 st.write(f"Média: **{avg_estresse:.2f}**")
-                st.write(f"Desvio Padrão: **{std_estresse:.2f}**")
 
             with cold:
                 st.write("**Ansiedade:**")
                 st.write(f"Média: **{avg_ansiedade:.2f}**")
-                st.write(f"Desvio Padrão: **{std_ansiedade:.2f}**")
 
             with cole:
                 st.write("**Depressão:**")
                 st.write(f"Média: **{avg_depressao:.2f}**")
-                st.write(f"Desvio Padrão: **{std_depressao:.2f}**")
 
             with colg:
                 st.write("**Qualidade de Vida:**")
                 st.write(f"Média: **{avg_QualiVida:.2f}**")
-                st.write(f"Desvio Padrão: **{std_QualiVida:.2f}**")
 
             st.markdown(
             """
