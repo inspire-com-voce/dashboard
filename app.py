@@ -17,7 +17,11 @@ from functions2 import login_page, main, descritiva_page
 
 
 
-
+st.set_page_config(
+    page_title="Dashboard Inspire",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 
 
