@@ -739,13 +739,13 @@ def clima_org():
             alegria = row['alegria']
 
             if tranquilidade > 0 and alegria > 0:
-                mensagem = f"O clima organizacional em relação ao {elemento} indica tranquilidade e alegria. Isso sugere que a equipe está alinhada com o propósito e valores da empresa."
+                mensagem = f"O clima organizacional em relação ao elemento {elemento} indica tranquilidade e alegria. Isso sugere que a equipe está alinhada com o propósito e valores da empresa."
             elif tranquilidade > 0 and alegria <= 0:
-                mensagem = f"Embora o clima organizacional em relação ao {elemento} indique tranquilidade, a equipe não expressa um alto nível de alegria. Isso sugere que, apesar da falta de ansiedade ou insegurança, a satisfação pode ser melhorada."
+                mensagem = f"Embora o clima organizacional em relação ao elemento {elemento} indique tranquilidade, a equipe não expressa um alto nível de alegria. Isso sugere que, apesar da falta de ansiedade ou insegurança, a satisfação pode ser melhorada."
             elif tranquilidade <= 0 and alegria > 0:
-                mensagem = f"Embora haja alegria em relação ao {elemento}, a tranquilidade não está em um bom índice. Isso sugere que a equipe pode sentir um certo anseio e insegurança em relação aos valores da empresa."
+                mensagem = f"Embora haja alegria em relação ao elemento {elemento}, a tranquilidade não está em um bom índice. Isso sugere que a equipe pode sentir um certo anseio e insegurança em relação aos valores da empresa."
             else:
-                mensagem = f"O clima organizacional em relação ao {elemento} indica tanto falta de tranquilidade quanto alegria. A equipe pode estar insatisfeita e sentir anseio em relação a esse elemento."
+                mensagem = f"O clima organizacional em relação ao elemento {elemento} indica tanto falta de tranquilidade quanto alegria. A equipe pode estar insatisfeita e sentir anseio em relação a esse elemento."
 
             detalhes_elementos.append({'Elemento': elemento, 'Tranquilidade': tranquilidade, 'Alegria': alegria, 'Assessoramento': mensagem})
 
