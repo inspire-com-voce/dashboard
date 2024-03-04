@@ -779,18 +779,11 @@ def clima_org():
         # Criar uma lista para armazenar todos os vetores
         vetores = []
 
+        # Ler todos os vetores e elementos do DataFrame df
         for index, row in df.iterrows():
             elemento = row['elemento']
             vetor = np.array([row['tranquilidade'], row['alegria']])
             vetores.append((elemento, vetor))
-        
-        # Verificar se as colunas necessárias existem
-        required_columns = ['missaoTranquilidade', 'missaoAlegria']
-        if all(column in df.columns for column in required_columns):
-            # Calcular a média das colunas
-            resultado_df = resultado_df.append({'elemento': 'Missão', 'tranquilidade': df['missaoTranquilidade'].mean()-5, 'alegria': df['missaoAlegria'].mean()-5}, ignore_index=True)
-        else:
-            st.write("As colunas necessárias não existem no DataFrame.")
 
         # Calcular a similaridade de cosseno entre cada par de vetores
         resultados_similaridade = []
