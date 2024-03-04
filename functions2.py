@@ -536,20 +536,7 @@ def descritiva_page():
 
                     st.write(f'O atributo que mais se difere do global é o de {nome_maior_valor}.')
         
-        st.title('Análise Bidimensional')
 
-            # Let the user choose columns from a select box
-        selected_columns = st.multiselect('Selecione os atributos', ('Cargo', 'Setor', 'Medicamento', 'Nine Box', 'Gênero', 'DISC', 'Burnout'))
-
-            # If at least two columns are selected
-        if len(selected_columns) >= 2:
-                # Create a crosstab to get the count of occurrences for each combination of selected columns
-                cross_table = pd.crosstab(df[selected_columns[0]], df[selected_columns[1]])
-
-                # Display the bidimensional bar chart using streamlit
-                st.bar_chart(cross_table)
-        else:
-                st.warning('Por favor selecione pelo menos dois atributos para a análise bidimensional.')
 
 
 
