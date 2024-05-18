@@ -12,7 +12,7 @@ from datetime import date, datetime
 #Pages
 
 def login_page():
-    st.title("Dashboard Bem Estar Inspire")
+    st.title("Dashboard Bem Estar")
     
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
@@ -36,7 +36,6 @@ avaliados = []
 
 def main():
     st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
-    st.sidebar.image('https://inspireagora.com.br/wp-content/uploads/2023/12/inspire-logo.png', width = 250)
     st.sidebar.title("Navegação")
 
     # Add options in the sidebar for navigation
