@@ -195,7 +195,7 @@ def descritiva_page():
     import pandas as pd
     import requests
     import streamlit as st
-    st.title('Dashboard Inspire')
+    st.title('Dashboard')
 
     #Notion credentials
     NOTION_TOKEN = "secret_BL3kRZyHDQKu0tHNn0lHiHdl7ExPYO3Rq3dOmwaKgS7"
