@@ -648,7 +648,7 @@ def clima_org():
                 json_data = file.read()
 
         # Carregar JSON
-        st.title('Hipolabor')
+        st.title('Empresa X')
         data = json.loads(json_data)
 
             # Salvar elementos em variáveis
